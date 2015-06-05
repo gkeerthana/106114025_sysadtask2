@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import os
-loc = raw_input();
+import sys
+loc = sys.argv[0] 
 s1path = os.path.join(loc,'s1.py')
 f1 = open("s1.py","w+")
 f1.write("#!/usr/bin/env python\n") 
@@ -36,6 +37,7 @@ user_cron = CronTab(user='keerthana96')
 
 
 cmd = '/usr/bin/env python s2.py' 
+
 
 job = user_cron.new(command=cmd)
 job.minute.every(10)
